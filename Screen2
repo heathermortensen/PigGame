@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 26 04:47:26 2020
+
+@author: hm
+"""
+import tkinter
+from PIL import Image, ImageTk
+
+# from PIL.Image import core as _imaging
+# https://www.youtube.com/watch?v=5ZgW4sQdAgQ
+
+# image location: C:\Users\Bob Ross\PycharmProjects\Pig\RollingDice
+
+root = tkinter.Tk(className='This_little_piggy_goes_to_market')
+root.iconbitmap('pig.ico')
+# set window size
+root.geometry("1515x650")
+#set window color
+# root.configure(bg='PaleVioletRed4')
+# root.configure(bg='PeachPuff4')
+# root.configure(bg='NavajoWhite4')
+# root.configure(bg='NavajoWhite2')
+# VERY good  !!!
+# root.configure(bg='MistyRose3')
+root.configure(bg='MistyRose3')
+root.Border = tkinter.Frame(relief='flat', borderwidth=10)
+
+# white box at top
+my_frame = tkinter.Frame(root, borderwidth=5)
+my_frame = tkinter.Frame(root, width=300, height=370, background="MistyRose3")
+my_frame.grid(row=0, column=0, rowspan=3, columnspan=2, padx=(20, 20))
+
+
+try:
+    img_0 = ImageTk.PhotoImage(Image.open("RollingDice.png"))
+    myLabel_0 = tkinter.Label(image=img_0)
+    myLabel_0.grid(row=0, column=0, columnspan=3, rowspan=4)
+except IOError:
+    pass
+
+assert isinstance(img_0, ImageTk.PhotoImage)
+
+# White Scorecard box
+scorecard_frame = tkinter.Frame(root, borderwidth=5)
+scorecard_frame = tkinter.Frame(root, width=300, height=370, background="white")
+scorecard_frame.grid(row=0, column=5, rowspan=3, columnspan=6, padx=(20, 20))
+
+# These are all added to the scorecard_frame
+img_pigFace = ImageTk.PhotoImage(Image.open("pigFace.png"))
+myLabel_PigFace = tkinter.Label(scorecard_frame, image=img_pigFace, background="white")
+myLabel_PigFace.grid(row=0, column=5)
+
+img_piggyFont = ImageTk.PhotoImage(Image.open("PIGGY.png"))
+myLabel_1 = tkinter.Label(scorecard_frame, image=img_piggyFont)
+myLabel_1.grid(row=0, column=6, columnspan=5, rowspan=1)
+
+myLabel_PlayerName = tkinter.Label(scorecard_frame, text='  Player Name ', background="white")
+myLabel_PlayerName.config(font='Courier 18 bold')
+myLabel_PlayerName.grid(row=1, column=5)
+
+
+
+root.mainloop()
+
+
+

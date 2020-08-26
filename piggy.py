@@ -7,6 +7,7 @@ Created on Tue Aug 25 12:22:43 2020
 """
 
 import tkinter as tk   #lowercase in python 3
+# This is a seperate file inside the tkinter folder (lib/tkinter/ttk.py)
 from tkinter import ttk
 from PIL import Image, ImageTk
 
@@ -123,7 +124,7 @@ class StartPage(tk.Frame):
         # myPlayGameButton = tk.Button(root, text="Play Pig", command=root.goToPageToRollDice())
         # myPlayGameButton.grid(row=7, column=2)
         
-        img = tk.PhotoImage("manRidesPig.png")
+        # img = tk.PhotoImage("manRidesPig.png")
 
         try:
             img = ImageTk.PhotoImage(Image.open("manRidesPig.png"))
