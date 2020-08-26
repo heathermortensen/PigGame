@@ -1,4 +1,6 @@
+
 # PigGame
+![Pig face](https://raw.githubusercontent.com/heathermortensen/PigGame/master/pigFace.png)
 
 Pig is a dice rolling game, also known as Skunk.
 
