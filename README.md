@@ -32,6 +32,6 @@ Pig is a dice rolling game, also known as Skunk.
 * These screens are running on Windows using python v___, PIL/PILLOW
 When I ran them on Mac OSX, using python v3.8, and PIL/PILLOW, the images do not display.
 
-![Screen1]()
+![Screen #1](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen1.png)
 
-![Screen2]()
+![Screen #2](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen2.png)
