@@ -4,14 +4,14 @@
 
 Pig is a dice rolling game, also known as Skunk.
 
-### Java version of the game = Skunk 
-* I first programmed Skunk in Java using Eclipse. 
+### Java version of the dice rolling game = Skunk 
+* I first programmed the Skunk game in Java using Eclipse. 
 * It produces output to terminal.
 * It is located in the [SkunkGame repo](https://github.com/heathermortensen/SkunkGame) of my Github page.
 * A detailed description of game implemetation can be found in the README.md file.
 
-### Python version of the game = Pig.
-* Pig frontend screens were programmed in PyCharm using Tkinter on Windows.
+### Python version of the dice rolling game = Pig.
+* Pig frontend screens (screen1.py and screen2.py) were programmed in PyCharm using Tkinter on Windows.
 * The backend will be translated from Java into Python using Spyder IDE shipped with Anaconda on Mac OSX.
 
 #### Software installs
@@ -32,8 +32,14 @@ Pig is a dice rolling game, also known as Skunk.
 #### Screenshots
 
 * These screens are running on Windows using python v___, PIL/PILLOW
-When I ran them on Mac OSX, using python v3.8, and PIL/PILLOW, the images do not display.
+When I ran them on Mac OSX, using python v3.8, and PIL/PILLOW.
 
 ![Screen #1](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen1.png)
 
 ![Screen #2](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen2.png)
+
+### Resources for merging this code together into Multiple class based windows and the backend:
+* [Python: Tkinter Class Based Windows](youtube.com/watch?v=RkaekNkIKNY) - tutorial series on Udemy $15
+* [Tkinter - GUI Example Multiple Display Frames](youtube.com/watch?v=KdoOm3xo8X0)
+
+* My class based window to accept user input is located in the file: piggy.py
