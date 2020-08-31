@@ -43,14 +43,13 @@ class Window:
             """Allows user to input the number of and names of all game players"""
             # stackoverflow.com/questions/12169258/should-i-use-entrys-get-or-its-textvariables-for-tkinter-in-python
 
-            print("\n initial # of players = " + str(self.number_of_players))
+            print("\nInitial # of players (Line # __ ) = " + str(self.number_of_players))
 
             # Collects user input from the entry and turns it into an int
             # user_input_number_of_players.set(int(str(entry_player_number.get("1.0", 'end-1c'))))
             try:
                 user_input_number_of_players = int(entry_player_number.get())
-                print("Inside try block, user_input = ")
-                print(user_input_number_of_players)
+                print("Inside try block, user_input = " + str(user_input_number_of_players))
                 self.number_of_players = user_input_number_of_players
 
             except ValueError:
@@ -65,7 +64,7 @@ class Window:
             # Set class instance value to this input from the user
             # self.number_of_players = user_input_number_of_players
 
-            print("# of players after click = " + str(self.number_of_players))
+            print("# of players after button click = " + str(self.number_of_players))
 
             return self.number_of_players
         
