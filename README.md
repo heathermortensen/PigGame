@@ -20,27 +20,29 @@
 #### Software installs
 
 | Software     | Version   | Location
-| ------------- | ---------- | ---------------------------: |
+| ------------- | ---------- | ---------------------------- |
 | Homebrew  | 2.4.0       | User/local/Cellular          | 
-| Powershell  | 7.0.3       | 
-| OpenSSL    | 2.8.3       |
-| pip              |                 |
-| ------------- | ----------- | --------------------------: | 
+| Powershell  | 7.0.3       |                                         |
+| OpenSSL    | 2.8.3       |                                         |
+| pip              |                 |                                        |
+| ------------- | ----------- | ----------------------------| 
 | Anaconda   | 3              |                                        |
 | Python        | 3.8           |                                        |
-| Spyder        |                 |                                        |
+| Spyder        | 4.1.4        |                                        |
 | Kite             |                 |                                        |
-| ------------- | ----------- | --------------------------: |
+| ------------- | ----------- | ----------------------------|
 
-#### Screenshots
+### Screenshots
 
-* These screens are running on Windows using python v___, PIL/PILLOW
-* I also ran them on Mac OSX, using python v3.8, and PIL/PILLOW.
+* These screens are running on Windows and Mac OSX, using python v3.8, and PIL/PILLO (which?).
+* I first designed both screens in Tkinter to sketch out a basic layout (shown figures 1 and 2)
 
-File: screen1.py
-![Screen #1 on Windows](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen1.png)
+#### File: screen1.py
 
-![Screen #1 on Mac OSX- after clicking instructions button](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen1b.png)
+![Screen #1 on Windows](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen1BothOS.png)
+
+Figure 1. Screen 1 shows basic UI functionality when a button is clicked 
+
 
 File: screen2.py
 ![Screen #2](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen2.png)
