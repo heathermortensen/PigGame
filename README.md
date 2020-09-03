@@ -65,11 +65,16 @@ Figure 2. Screen 2 is where players will take turns rolling dice and a scorecard
 Figure 3. The Window class
 
 * The class based window accepts and validates user input for the number of players and the names of each player. 
-* This step concludes programming for the View in MVC.
+
+![userInputValidation](https://raw.githubusercontent.com/heathermortensen/PigGame/master/userInputScreenshot.png)
+
+Figure 4. User input validation for screen 1
+
+* This step concludes basic programming for the View in MVC.
 
 ![console output](https://raw.githubusercontent.com/heathermortensen/PigGame/master/consoleOutputPiggy.png)
 
-Figure 4. User input for screen 1
+Figure 5. User input for screen 1
 
 ### Step 3.) Program the backend
 
