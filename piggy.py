@@ -43,7 +43,7 @@ class Window:
             """Allows user to input the number of and names of all game players"""
             # stackoverflow.com/questions/12169258/should-i-use-entrys-get-or-its-textvariables-for-tkinter-in-python
 
-            print("\nInitial # of players (Line # __ ) = " + str(self.number_of_players))
+            print("\nInitial # of players (Line #26) = " + str(self.number_of_players))
 
             # Collects user input from the entry and turns it into an int
             # user_input_number_of_players.set(int(str(entry_player_number.get("1.0", 'end-1c'))))
@@ -57,15 +57,82 @@ class Window:
                 # tkinter.messagebox.deiconify()
                 # tkinter.messagebox.quit()
                 # tkinter.messagebox.destroy()
-                
             
             #user_input_number_of_players.set(int(str(entry_player_number.get("1.0", 'end-1c'))))
+            
 
-            # Set class instance value to this input from the user
-            # self.number_of_players = user_input_number_of_players
+           # Add a label
+
+            myLabel1b = tkinter.Label(self.root, text="Please Enter Player Names: ",
+                                 width=25)
+            myLabel1b.config(font="Courier 14 bold")
+            myLabel1b.grid(row=2, column=1)
+            
+            #Make a scrollable frame appear
+            
+            # You must create a frame, embed that in the canvas, then attach the scrollbar to the canvas
+            # Code for scrollable frame came from:
+            # https://stackoverflow.com/questions/16188420/tkinter-scrollbar-for-frame
+            myframe=Frame(root,relief=GROOVE,width=100,height=100)
+            myframe.grid(row=3,column=3, columnspan=2)
+
+            canvas=Canvas(myframe)
+            frame=Frame(canvas)
+            myscrollbar=Scrollbar(myframe,orient="vertical",command=canvas.yview)
+            canvas.configure(yscrollcommand=myscrollbar.set)
+            
+            # myframe.bind(
+            #    "<Configure>",
+            #    lambda e: canvas.configure(
+            #        scrollregion=canvas.bbox("all")
+            #        )
+            #    )
+            
+            # put entry boxes for player names inside the scrollable frame
+            
+            for x in range(self.number_of_players):
+                print(x+1)
+                # Add a label
+                myLabel1b = tkinter.Label(myframe, text="Player #" + str(x+1)+ " Name: ")
+                myLabel1b.config(font="Courier 14 bold")
+                myLabel1b.grid(row=4+x, column=3)
+                
+                # Fix this textVariable parameter - unecessary?
+                # https://stackoverflow.com/questions/32640219/creating-stringvar-variables-in-a-loop-for-tkinter-entry-widgets
+                
+                # user_input_player_names = tkinter.StringVar()
+                name_entries = []
+                for i in range(self.number_of_players):
+                    entry_player_name = tkinter.Entry(myframe, width=10, borderwidth=2)
+                    # entry_player_name.set(str(x+1))
+                    entry_player_name.grid(row=4+x, column=4)
+                    name_entries.append(entry_player_name)
+                # specify a default value inside the entry box
+                # entry_player_number.insert(0,int("2"))
+
+            # Add a button for adding players names into the game
+
+            addPlayerNamesButton = tkinter.ttk.Button(self.root,
+                                     text="Enter Names",
+                                     command=addPlayerNames)
+
+            addPlayerNamesButton.grid(row=x+2, column=4)
+                
+            # Make old label, entry, and button dissapear
+            
+            myLabel1.grid_forget()
+            entry_player_number.grid_forget()
+            addPlayerButton.grid_forget()
+           
+                
+                #myLabel1.congifg(text="Please Enter Player Names: ", width=25)
+                # myLabel1.config(font="Courier 14 bold")
+                # myLabel1.grid(row=2, column=1)
+          
+        
 
             print("# of players after button click = " + str(self.number_of_players))
-
+            # Set class instance value to this input from the user
             return self.number_of_players
         
         print("# of players after click = " + str(self.number_of_players))
@@ -107,5 +174,3 @@ class Window:
 
 
 main()
-
-   
