@@ -8,6 +8,9 @@ from tkinter import ttk
 from tkinter.ttk import *
 # See docs.python.org/8/library/tkinter.ttk.html
 
+# Must import messageBox explicitly
+from tkinter import messagebox
+
 # Class Based Windows
 # youtube.com/watch?v=RkaekNkIKNY
 

@@ -64,12 +64,16 @@ Figure 2. Screen 2 is where players will take turns rolling dice and a scorecard
 
 Figure 3. The Window class
 
-* My class based window accepts user input for the number of players and the names of each player. 
+* The class based window accepts and validates user input for the number of players and the names of each player. 
+* This step concludes programming for the View in MVC.
 
-![Screen Accepting user input](https://raw.githubusercontent.com/heathermortensen/PigGame/master/piggyUI_userInput.png)
-![console output](https://raw.githubusercontent.com/heathermortensen/PigGame/master/consoleOutput.png)
+![console output](https://raw.githubusercontent.com/heathermortensen/PigGame/master/consoleOutputPiggy.png)
 
-Figure 5. UI functionality that accepts user input prior to begining a game of Pig
+Figure 4. User input for screen 1
+
+### Step 3.) Program the backend
+
+* write something here...
 
 ### Resources for merging this code together into Multiple class based windows and the backend:
 * [Python: Tkinter Class Based Windows](youtube.com/watch?v=RkaekNkIKNY) - tutorial series on Udemy $15
