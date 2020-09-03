@@ -2,26 +2,25 @@
 # PigGame
 ![Pig face](https://raw.githubusercontent.com/heathermortensen/PigGame/master/pigFace.png)
 
-* Pig is a dice rolling game, also known as Skunk.
-* It has 2 screens.
+* Pig is a dice rolling game (also known as Skunk).
 * Screen #1 allows the user to enter the number of players in the game and their corresponding names.
-* Screen #2 allows players to play Skunk and shows a scorecard.
+* Screen #2 allows players to play Pig and displays a scorecard.
 
 ### Java version of the dice rolling game = Skunk 
 * I first programmed the Skunk game in Java using Eclipse. 
 * It produced output to terminal.
 * It is located in the [SkunkGame repo](https://github.com/heathermortensen/SkunkGame) of my Github page.
-* A detailed description of game implemetation can be found in the SkunkGame README.md file.
+* A detailed game description can be found in the SkunkGame [README.md](https://github.com/heathermortensen/SkunkGame/blob/master/README.md) file.
 
 ### Python version of the dice rolling game = Pig.
-* Pig frontend screens (screen1.py and screen2.py) were programmed in PyCharm using Tkinter on Windows.
+* Frontend screen designs (screen1.py and screen2.py) were sketchd out in PyCharm using python's Tkinter GUI frameowrk on Windows.
 * The backend will be translated from Java into Python using Spyder IDE shipped with Anaconda on Mac OSX.
 
 #### Software installs
 
 | Software     | Version   | Location
 | ------------- | ---------- | ---------------------------- |
-| Homebrew  | 2.4.0       | User/local/Cellular          | 
+| Homebrew  | 2.4.0       | Mac: User/local/Cellular | 
 | Powershell  | 7.0.3       |                                         |
 | OpenSSL    | 2.8.3       |                                         |
 | pip              |                 |                                        |
@@ -32,27 +31,28 @@
 | Kite             |                 |                                        |
 | ------------- | ----------- | ----------------------------|
 
-### Step 1.) Design frontend
+### Step 1.) Frontend sketch
 
 * I first designed both screens in Tkinter (UI framework inherent to python 3) to sketch out a basic layout for the game (see figures 1 and 2).
-* These screens are running on Windows and Mac OSX, using python v3.8, and PIL/PILLO (which?).
+* I use the PIL Imaging Libary, which excludes me from using Pillow. (verify this - which did I install? They are mutually exclusive.)
 
 #### File: screen1.py
 
 ![Screen #1 on Windows & Mac](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen1BothOS.png)
 
-Figure 1. Screen 1 shows basic UI functionality when a button is clicked 
+Figure 1. Screen 1 demonstrates basic button click to display game rules
 
 
 #### File: screen2.py
 
 ![Screen #2](https://raw.githubusercontent.com/heathermortensen/PigGame/master/screen2.png)
 
-Figure 2. Screen 2 is where players will take turns rolling dice and a scorecard will be displayed
+Figure 2. Screen 2 is where players take turns rolling dice and a scorecard will be displayed
 
 ### Step 2.) Program frontend functionality
 
-* Next, I started fresh. I programmed UI functionality into a blank file containing only necessary widgets that I required to test UI functionality.
+* Having aquainted with Tkinter, I started fresh. 
+* I programmed into a blank file containing only necessary widgets required to test UI functions.
 * Design elements from screen1.py and screen2.py can be added in quickly later.
 * This file is called piggy.py and contains a class for instantiating Window objects. 
 * The window1 object contains the functionality for screen 1 (see figure 3).
@@ -74,7 +74,7 @@ Figure 4. User input validation for screen 1
 
 ![console output](https://raw.githubusercontent.com/heathermortensen/PigGame/master/consoleOutputPiggy.png)
 
-Figure 5. User input for screen 1
+Figure 5. User input required to run the program
 
 ### Step 3.) Program the backend
 
