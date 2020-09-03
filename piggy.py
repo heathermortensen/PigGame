@@ -24,7 +24,8 @@ def main():
 
 class Window:
     number_of_players = 0
-    # int player_names[] = new player_names[number_of_players]
+    # A list that will store Player objects
+    name_entries = [number_of_players]
 
     def __init__(self, root, title, geometry, message, iconbitmap,
                  playerNumber):
@@ -34,66 +35,92 @@ class Window:
         self.root.geometry(geometry)
         self.root.iconbitmap(iconbitmap)
         self.number_of_players = playerNumber
-        # Make the window show up in center of screen and not be ccovered up by anything else.
-        # self.root.eval('tk::PlaceWindow %s center' % self.root.wininfo_toplevel())
+        # Make window show up front & center.
+        # Itherwise, its covered up by other windows.
+        self.root.focus_force()
+
         # this is an important line.
         # self.root.mainloop()
 
+        def get_player_names_from_user():
+
+            print("Player Names/Numbers output to console:")
+
+            for i in range(self.number_of_players):
+                print(str(i))
+                # + self.name_entries[i]
+
+            # WRITE A SET METHOD THAT SETS THE USER ENTERED NAMES INTO THE
+            # PLAYER LIST IN THE MODEL ---------------------------------
+            # Code here next....
+            # ----------------------------------------------------------
+
         def addPlayers():
-            """Allows user to input the number of and names of all game players"""
+            """User inputs the # of and names of all players"""
             # stackoverflow.com/questions/12169258/should-i-use-entrys-get-or-its-textvariables-for-tkinter-in-python
 
             print("\nInitial # of players (Line #26) = " + str(self.number_of_players))
 
-            # Collects user input from the entry and turns it into an int
-            # user_input_number_of_players.set(int(str(entry_player_number.get("1.0", 'end-1c'))))
-            try:
-                user_input_number_of_players = int(entry_player_number.get())
-                print("Inside try block, user_input = " + str(user_input_number_of_players))
-                self.number_of_players = user_input_number_of_players
+            # Collect user input from the entry widget & turn it into an int
 
-            except ValueError:
-                tkinter.messagebox.showerror('Non-Integer Input', 'User MUST enter a player # greater than 1.', icon = 'error')
-                # tkinter.messagebox.deiconify()
-                # tkinter.messagebox.quit()
-                # tkinter.messagebox.destroy()
-            
-            #user_input_number_of_players.set(int(str(entry_player_number.get("1.0", 'end-1c'))))
-            
+            while (self.number_of_players < 2):
+                try:
+                    user_input_number_of_players = int(entry_player_number.get())
+                    print("Inside try block, user_input = " + str(user_input_number_of_players))
 
-           # Add a label
+                    if(user_input_number_of_players < 2):
+                        tkinter.messagebox.showerror('Non-Integer Input', 'User MUST enter a player # > 1.', icon='error')
+                        tkinter.messagebox.quit()
+                        tkinter.messagebox.destroy()
+                        user_input_number_of_players = int(entry_player_number.get())
 
-            myLabel1b = tkinter.Label(self.root, text="Please Enter Player Names: ",
-                                 width=25)
+                    else:
+                        self.number_of_players = user_input_number_of_players
+
+                except ValueError:
+                    tkinter.messagebox.showerror('Non-Integer Input', 'User MUST enter a player # greater than 1.', icon='error')
+                    tkinter.messagebox.quit()
+                    tkinter.messagebox.destroy()
+
+            # Add a label
+
+            myLabel1b = tkinter.Label(self.root, text="Please Enter Player Names: ", width=25)
             myLabel1b.config(font="Courier 14 bold")
             myLabel1b.grid(row=2, column=1)
-            
+
+            # GET PLAYER NAMES FROM USER....USE A SCROLLING CANVAS FRAME
+
             #Make a scrollable frame appear
             
-            # You must create a frame, embed that in the canvas, then attach the scrollbar to the canvas
-            # Code for scrollable frame came from:
-            # https://stackoverflow.com/questions/16188420/tkinter-scrollbar-for-frame
-            myframe=Frame(root,relief=GROOVE,width=100,height=100)
-            myframe.grid(row=3,column=3, columnspan=2)
+            # Scroll appears, but doesn't function
 
-            canvas=Canvas(myframe)
-            frame=Frame(canvas)
-            myscrollbar=Scrollbar(myframe,orient="vertical",command=canvas.yview)
-            canvas.configure(yscrollcommand=myscrollbar.set)
+
+            # Code for scrollable frame came from:
             
-            # myframe.bind(
-            #    "<Configure>",
-            #    lambda e: canvas.configure(
-            #        scrollregion=canvas.bbox("all")
-            #        )
-            #    )
+            myframe = tkinter.Frame(root, relief=tkinter.GROOVE, width=100, height=100)
+            myframe.grid(row=3, column=3, columnspan=2, pady=30, padx=30)
+            myframe.config(width=5)
             
+            # https://stackoverflow.com/questions/16188420/tkinter-scrollbar-for-frame
+            
+            self.tree = ttk.Treeview(myframe, selectmode="extended")
+            scbVDirSel = ttk.Scrollbar(myframe, orient=tkinter.VERTICAL, command=self.tree.yview)
+            self.tree.configure(yscrollcommand=scbVDirSel.set)
+            # self.tree["columns"] = (self.columnListOutput)
+            self.tree.column("#0", width=40)
+            self.tree.heading("#0", text='SrNo', anchor='w')
+            self.tree.grid(row=2, column=0, sticky=tkinter.NSEW, in_=myframe, columnspan=10, rowspan=10)
+            scbVDirSel.grid(row=2, column=10, rowspan=10, sticky=tkinter.NS, in_=myframe)
+            myframe.rowconfigure(0, weight=1)
+            myframe.columnconfigure(0, weight=1)
+
+
             # put entry boxes for player names inside the scrollable frame
-            
+
             for x in range(self.number_of_players):
                 print(x+1)
                 # Add a label
-                myLabel1b = tkinter.Label(myframe, text="Player #" + str(x+1)+ " Name: ")
+                myLabel1b = tkinter.Label(myframe, text="Player #" + str(x+1)+ ": ")
                 myLabel1b.config(font="Courier 14 bold")
                 myLabel1b.grid(row=4+x, column=3)
                 
@@ -114,29 +141,22 @@ class Window:
 
             addPlayerNamesButton = tkinter.ttk.Button(self.root,
                                      text="Enter Names",
-                                     command=addPlayerNames)
+                                     command=get_player_names_from_user)
 
-            addPlayerNamesButton.grid(row=x+2, column=4)
-                
+            addPlayerNamesButton.grid(row=self.number_of_players+2, column=4)
+
             # Make old label, entry, and button dissapear
-            
+ 
             myLabel1.grid_forget()
             entry_player_number.grid_forget()
             addPlayerButton.grid_forget()
-           
-                
-                #myLabel1.congifg(text="Please Enter Player Names: ", width=25)
-                # myLabel1.config(font="Courier 14 bold")
-                # myLabel1.grid(row=2, column=1)
-          
-        
 
             print("# of players after button click = " + str(self.number_of_players))
             # Set class instance value to this input from the user
             return self.number_of_players
-        
+
         print("# of players after click = " + str(self.number_of_players))
-        
+
         # Add a label
 
         myLabel1 = tkinter.Label(self.root, text="Please Enter # of Players",
