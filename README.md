@@ -81,7 +81,7 @@ Figure 5. User input required to run the program
 
 * write something here...
 
-### Resources for merging this code together into Multiple class based windows and the backend:
+### Resources for merging this frontend (multiple class based windows) together with the python backend:
 * [Python: Tkinter Class Based Windows](youtube.com/watch?v=RkaekNkIKNY) - tutorial series on Udemy $15
 * [Tkinter - GUI Example Multiple Display Frames](youtube.com/watch?v=KdoOm3xo8X0)
 * [Model View Controller Pattern](https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_model_view_controller.htm)
