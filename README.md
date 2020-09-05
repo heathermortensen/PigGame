@@ -77,6 +77,7 @@ Figure 4. User input validation for screen 1
 Figure 5. User input required to run the program
 
 ### Step 3.) Program the backend
+- Remember to make the controller navigate to the 2nd window (not the 1st window)
 
 * write something here...
 
@@ -89,5 +90,6 @@ Figure 5. User input required to run the program
 * [tkinter — Python interface to Tcl/Tk](https://docs.python.org/3/library/tkinter.html)
 Python QT frameowrk for the next tim I do something like this:
 * [Qt for Python](https://doc.qt.io/qtforpython/)
-
+Make an executable
 * [Standalone Python EXE Executable - Python Tkinter GUI Tutorial #40](https://www.youtube.com/watch?v=QWqxRchawZY)
+* [How to Convert any Python File to .EXE](https://www.youtube.com/watch?v=UZX5kH72Yx4)
