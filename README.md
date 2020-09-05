@@ -83,5 +83,11 @@ Figure 5. User input required to run the program
 ### Resources for merging this code together into Multiple class based windows and the backend:
 * [Python: Tkinter Class Based Windows](youtube.com/watch?v=RkaekNkIKNY) - tutorial series on Udemy $15
 * [Tkinter - GUI Example Multiple Display Frames](youtube.com/watch?v=KdoOm3xo8X0)
+* [Model View Controller Pattern](https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_model_view_controller.htm)
+* [Object Oriented Programming Crash Course with Tkinter](https://pythonprogramming.net/object-oriented-programming-crash-course-tkinter/)
+* [An Example of Model View Controller Design Pattern with Tkinter Python](https://sukhbinder.wordpress.com/2014/12/25/an-example-of-model-view-controller-design-pattern-with-tkinter-python/)
+* [tkinter — Python interface to Tcl/Tk](https://docs.python.org/3/library/tkinter.html)
+Python QT frameowrk for the next tim I do something like this:
+* [Qt for Python](https://doc.qt.io/qtforpython/)
 
-
+* [Standalone Python EXE Executable - Python Tkinter GUI Tutorial #40](https://www.youtube.com/watch?v=QWqxRchawZY)
